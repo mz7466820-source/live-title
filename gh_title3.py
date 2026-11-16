@@ -9,7 +9,7 @@ ROUNDS, GAP = 35, 600          # ~6 hour run, checks every 10 minutes
 def make_title(views):
     n = views + 1
     suf = "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
-    return f"What If You're The {n:,}{suf} Person… And I Heard Your Secret?"
+    return f"What If You're The {n:,}{suf} Person To Watch This… And I Heard Your Secret?"
 
 creds = Credentials.from_authorized_user_info(json.loads(os.environ["TOKEN_JSON"]), ["https://www.googleapis.com/auth/youtube"])
 for r in range(ROUNDS):
