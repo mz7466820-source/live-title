@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 
 VIDEO_ID = "YzMvgrI_58M"
 TEMPLATE = "What If You're The {n} Person To Watch This… And The Last?"
-ROUNDS, GAP = 4, 600   # 4 checks, 10 minutes apart
+ROUNDS, GAP = 35, 600  # 4 checks, 10 minutes apart
 
 def ordinal(n):
     suf = "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
