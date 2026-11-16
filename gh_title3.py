@@ -4,7 +4,7 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
 VIDEO_ID = "c9lYTCgD7_o"
-ROUNDS, GAP = 35, 600          # ~6 hour run, checks every 10 minutes
+ROUNDS, GAP = 12, 1800
 
 def make_title(views):
     n = views + 1
