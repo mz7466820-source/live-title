@@ -1,0 +1,21 @@
+name: Live Title Eyes
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+concurrency:
+  group: live-title-eyes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install google-api-python-client google-auth
+      - run: python gh_title5.py
+        env:
+          TOKEN_JSON: ${{ secrets.TOKEN_JSON2 }}
